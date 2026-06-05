@@ -28,13 +28,9 @@ import mbappeAsset from "@/assets/MBAPEE.png.asset.json";
 import neymarAsset from "@/assets/NEYMAR.png.asset.json";
 import cr7Asset from "@/assets/cr7.png.asset.json";
 import viniAsset from "@/assets/vini_jr.png.asset.json";
-import c2 from "@/assets/coloring-2.png";
-import c3 from "@/assets/coloring-3.png";
+import tacaAsset from "@/assets/TACA.png.asset.json";
+import brAsset from "@/assets/BR.jpg.asset.json";
 import c5 from "@/assets/coloring-5.png";
-import profileAunt from "@/assets/profile-aunt-1.jpg";
-import profileDad from "@/assets/profile-dad-1.jpg";
-import profileGrandma from "@/assets/profile-grandma-1.jpg";
-import profileMom from "@/assets/profile-mom-1.jpg";
 import stadiumBg from "@/assets/stadium-bg.jpg";
 
 const CHECKOUT_URL = "https://pay.cakto.com.br/8wbiopb_912361";
