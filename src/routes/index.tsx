@@ -418,7 +418,7 @@ function PreviewSection() {
             <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-3">
               {PREVIEW_ITEMS.map((item, index) => (
                 <button
-                  key={item.label}
+                  key={index}
                   type="button"
                   onClick={() => setCurrent(index)}
                   className={[
@@ -436,9 +436,6 @@ function PreviewSection() {
                     height={1024}
                     className="aspect-[4/5] w-full object-cover"
                   />
-                  <span className="block px-2 py-2 text-center text-[11px] font-semibold text-brand-blue sm:text-xs">
-                    {item.label}
-                  </span>
                 </button>
               ))}
             </div>
