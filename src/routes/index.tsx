@@ -264,14 +264,6 @@ function Hero() {
               height={1024}
               className="mx-auto w-full max-w-sm rounded-[2rem] border border-white/10 drop-shadow-2xl"
             />
-            <div className="absolute -right-2 top-6 rotate-12 rounded-full bg-brand-gold px-4 py-2 text-center font-display text-sm leading-tight text-brand-blue-dark shadow-card-brand sm:-right-4 sm:px-5">
-              <Star className="mx-auto mb-0.5 h-4 w-4 fill-brand-blue-dark" />
-              MAIS DE
-              <br />
-              <span className="text-xl">100</span>
-              <br />
-              ILUSTRAÇÕES
-            </div>
           </div>
         </div>
       </div>
