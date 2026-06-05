@@ -387,10 +387,6 @@ function PreviewSection() {
                 height={1024}
                 className="mx-auto aspect-[4/5] w-full object-contain bg-white"
               />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-blue-dark/80 to-transparent px-5 py-5 text-white">
-                <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-gold">Prévia atual</p>
-                <p className="mt-1 text-lg font-semibold">{activeItem.label}</p>
-              </div>
             </div>
 
             <div className="mt-4 flex items-center justify-between gap-3">
