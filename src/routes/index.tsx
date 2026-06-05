@@ -580,7 +580,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Comprei pra passar a tarde com a netinha. Os desenhos são lindos e tem MUITA coisa. Já imprimi várias páginas hahaha",
   },
   {
-    name: "Ricardo Silva",
+    name: "Ricardo Scalabrin",
     role: "pai do Gabriel (6 anos)",
     time: "20:03",
     text:
@@ -594,7 +594,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Comprei pro meu sobrinho de presente. Qualidade muito boa dos desenhos e a agenda dos jogos veio junto certinho.",
   },
   {
-    name: "Paula Lima",
+    name: "Paula de Tony",
     role: "mãe da Helena (7 anos)",
     time: "19:21",
     text:
@@ -608,7 +608,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Já estamos colorindo juntos os estádios. Variedade absurda e os 3 bônus chegaram tudo certo no WhatsApp.",
   },
   {
-    name: "Bruno Carvalho",
+    name: "Bruno Farias",
     role: "pai da Laura (8 anos)",
     time: "16:55",
     text:
