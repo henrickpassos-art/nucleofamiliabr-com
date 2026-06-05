@@ -36,15 +36,15 @@ import stadiumBg from "@/assets/stadium-bg.jpg";
 const CHECKOUT_URL = "https://pay.cakto.com.br/8wbiopb_912361";
 
 const PREVIEW_ITEMS = [
-  { src: heroCover.url, label: "CAPAA", alt: "Capa do Livro de Colorir Pintando a Copa do Mundo 2026" },
-  { src: c3, label: "BRASIL", alt: "Página do Livro de Colorir com tema Brasil" },
-  { src: neymarAsset.url, label: "NEYMAR", alt: "Página do Livro de Colorir do Neymar Jr" },
-  { src: viniAsset.url, label: "VINI JR", alt: "Página do Livro de Colorir do Vinicius Jr" },
-  { src: cr7Asset.url, label: "CR7", alt: "Página do Livro de Colorir do Cristiano Ronaldo" },
-  { src: messiAsset.url, label: "1 MESSI", alt: "Página do Livro de Colorir do Messi" },
-  { src: mbappeAsset.url, label: "MBAPEE", alt: "Página do Livro de Colorir do Mbappé" },
-  { src: c5, label: "2 ESTÁDIO AZTECA", alt: "Página do Livro de Colorir com estádio famoso" },
-  { src: c2, label: "12 TAÇA", alt: "Página do Livro de Colorir com a taça da Copa" },
+  { src: heroCover.url, alt: "Capa do Livro de Colorir Pintando a Copa do Mundo 2026" },
+  { src: brAsset.url, alt: "Página do Livro de Colorir com a bandeira do Brasil" },
+  { src: neymarAsset.url, alt: "Página do Livro de Colorir do Neymar Jr" },
+  { src: viniAsset.url, alt: "Página do Livro de Colorir do Vinicius Jr" },
+  { src: cr7Asset.url, alt: "Página do Livro de Colorir do Cristiano Ronaldo" },
+  { src: messiAsset.url, alt: "Página do Livro de Colorir do Messi" },
+  { src: mbappeAsset.url, alt: "Página do Livro de Colorir do Mbappé" },
+  { src: c5, alt: "Página do Livro de Colorir com estádio famoso" },
+  { src: tacaAsset.url, alt: "Página do Livro de Colorir com a taça da Copa" },
 ] as const;
 
 export const Route = createFileRoute("/")({
