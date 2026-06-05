@@ -13,7 +13,6 @@ import {
   ShieldCheck,
   Smartphone,
   Sparkles,
-  Star,
   Trophy,
   Users,
   Zap,
@@ -28,27 +27,23 @@ import mbappeAsset from "@/assets/MBAPEE.png.asset.json";
 import neymarAsset from "@/assets/NEYMAR.png.asset.json";
 import cr7Asset from "@/assets/cr7.png.asset.json";
 import viniAsset from "@/assets/vini_jr.png.asset.json";
-import c2 from "@/assets/coloring-2.png";
-import c3 from "@/assets/coloring-3.png";
+import tacaAsset from "@/assets/TACA.png.asset.json";
+import brAsset from "@/assets/BR.jpg.asset.json";
 import c5 from "@/assets/coloring-5.png";
-import profileAunt from "@/assets/profile-aunt-1.jpg";
-import profileDad from "@/assets/profile-dad-1.jpg";
-import profileGrandma from "@/assets/profile-grandma-1.jpg";
-import profileMom from "@/assets/profile-mom-1.jpg";
 import stadiumBg from "@/assets/stadium-bg.jpg";
 
 const CHECKOUT_URL = "https://pay.cakto.com.br/8wbiopb_912361";
 
 const PREVIEW_ITEMS = [
-  { src: heroCover.url, label: "CAPAA", alt: "Capa do Livro de Colorir Pintando a Copa do Mundo 2026" },
-  { src: c3, label: "BRASIL", alt: "Página do Livro de Colorir com tema Brasil" },
-  { src: neymarAsset.url, label: "NEYMAR", alt: "Página do Livro de Colorir do Neymar Jr" },
-  { src: viniAsset.url, label: "VINI JR", alt: "Página do Livro de Colorir do Vinicius Jr" },
-  { src: cr7Asset.url, label: "CR7", alt: "Página do Livro de Colorir do Cristiano Ronaldo" },
-  { src: messiAsset.url, label: "1 MESSI", alt: "Página do Livro de Colorir do Messi" },
-  { src: mbappeAsset.url, label: "MBAPEE", alt: "Página do Livro de Colorir do Mbappé" },
-  { src: c5, label: "2 ESTÁDIO AZTECA", alt: "Página do Livro de Colorir com estádio famoso" },
-  { src: c2, label: "12 TAÇA", alt: "Página do Livro de Colorir com a taça da Copa" },
+  { src: heroCover.url, alt: "Capa do Livro de Colorir Pintando a Copa do Mundo 2026" },
+  { src: brAsset.url, alt: "Página do Livro de Colorir com a bandeira do Brasil" },
+  { src: neymarAsset.url, alt: "Página do Livro de Colorir do Neymar Jr" },
+  { src: viniAsset.url, alt: "Página do Livro de Colorir do Vinicius Jr" },
+  { src: cr7Asset.url, alt: "Página do Livro de Colorir do Cristiano Ronaldo" },
+  { src: messiAsset.url, alt: "Página do Livro de Colorir do Messi" },
+  { src: mbappeAsset.url, alt: "Página do Livro de Colorir do Mbappé" },
+  { src: c5, alt: "Página do Livro de Colorir com estádio famoso" },
+  { src: tacaAsset.url, alt: "Página do Livro de Colorir com a taça da Copa" },
 ] as const;
 
 export const Route = createFileRoute("/")({
@@ -268,14 +263,6 @@ function Hero() {
               height={1024}
               className="mx-auto w-full max-w-sm rounded-[2rem] border border-white/10 drop-shadow-2xl"
             />
-            <div className="absolute -right-2 top-6 rotate-12 rounded-full bg-brand-gold px-4 py-2 text-center font-display text-sm leading-tight text-brand-blue-dark shadow-card-brand sm:-right-4 sm:px-5">
-              <Star className="mx-auto mb-0.5 h-4 w-4 fill-brand-blue-dark" />
-              MAIS DE
-              <br />
-              <span className="text-xl">100</span>
-              <br />
-              ILUSTRAÇÕES
-            </div>
           </div>
         </div>
       </div>
@@ -399,10 +386,6 @@ function PreviewSection() {
                 height={1024}
                 className="mx-auto aspect-[4/5] w-full object-contain bg-white"
               />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-blue-dark/80 to-transparent px-5 py-5 text-white">
-                <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-gold">Prévia atual</p>
-                <p className="mt-1 text-lg font-semibold">{activeItem.label}</p>
-              </div>
             </div>
 
             <div className="mt-4 flex items-center justify-between gap-3">
@@ -434,7 +417,7 @@ function PreviewSection() {
             <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-3">
               {PREVIEW_ITEMS.map((item, index) => (
                 <button
-                  key={item.label}
+                  key={index}
                   type="button"
                   onClick={() => setCurrent(index)}
                   className={[
@@ -452,9 +435,6 @@ function PreviewSection() {
                     height={1024}
                     className="aspect-[4/5] w-full object-cover"
                   />
-                  <span className="block px-2 py-2 text-center text-[11px] font-semibold text-brand-blue sm:text-xs">
-                    {item.label}
-                  </span>
                 </button>
               ))}
             </div>
@@ -581,7 +561,6 @@ type Testimonial = {
   name: string;
   role: string;
   time: string;
-  photo: string;
   text: string;
 };
 
@@ -590,7 +569,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Aline Lopes",
     role: "mãe do Pedro (7 anos)",
     time: "09:12",
-    photo: profileMom,
     text:
       "Gente, meu filho não largou! Veio rapidinho no WhatsApp e ele já passou a tarde toda colorindo o Neymar e a taça 😍⚽",
   },
@@ -598,7 +576,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Maria Regina",
     role: "avó da Sofia (8 anos)",
     time: "14:48",
-    photo: profileGrandma,
     text:
       "Comprei pra passar a tarde com a netinha. Os desenhos são lindos e tem MUITA coisa. Já imprimi várias páginas hahaha",
   },
@@ -606,7 +583,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Ricardo Silva",
     role: "pai do Gabriel (6 anos)",
     time: "20:03",
-    photo: profileDad,
     text:
       "Vale cada centavo. Entrega na hora e o bônus do pôster pra emoldurar foi o que mais ele gostou 🇧🇷",
   },
@@ -614,7 +590,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Juliana Matos",
     role: "tia do Lucas (9 anos)",
     time: "11:27",
-    photo: profileAunt,
     text:
       "Comprei pro meu sobrinho de presente. Qualidade muito boa dos desenhos e a agenda dos jogos veio junto certinho.",
   },
@@ -622,7 +597,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Paula Lima",
     role: "mãe da Helena (7 anos)",
     time: "19:21",
-    photo: profileMom,
     text:
       "Adorei porque tirou ela um pouco do tablet. As páginas das bandeiras ela tá adorando 💚💛",
   },
@@ -630,7 +604,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Sérgio Fonseca",
     role: "avô do Miguel (10 anos)",
     time: "08:34",
-    photo: profileGrandma,
     text:
       "Já estamos colorindo juntos os estádios. Variedade absurda e os 3 bônus chegaram tudo certo no WhatsApp.",
   },
@@ -638,7 +611,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Bruno Carvalho",
     role: "pai da Laura (8 anos)",
     time: "16:55",
-    photo: profileDad,
     text:
       "Chegou em minutos e a impressão ficou ótima. O Livro de Colorir surpreendeu bastante pelo preço.",
   },
@@ -646,7 +618,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Camila Rocha",
     role: "mãe do Davi (5 anos)",
     time: "22:10",
-    photo: profileAunt,
     text:
       "Meu filho ficou encantado com os jogadores e a capa. Vale muito a pena, principalmente com os bônus inclusos.",
   },
@@ -656,14 +627,6 @@ function WhatsappBubble({ t }: { t: Testimonial }) {
   return (
     <article className="flex flex-col rounded-2xl border border-border bg-card p-4 shadow-card-brand">
       <header className="flex items-center gap-3 border-b border-border pb-3">
-        <img
-          src={t.photo}
-          alt={`Foto de perfil de ${t.name}`}
-          loading="lazy"
-          width={1024}
-          height={1024}
-          className="h-11 w-11 flex-none rounded-full object-cover blur-[3px] saturate-75"
-        />
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-semibold text-brand-blue">{t.name}</p>
           <p className="truncate text-xs text-muted-foreground">{t.role}</p>
