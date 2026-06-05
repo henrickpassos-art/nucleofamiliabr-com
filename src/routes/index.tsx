@@ -562,7 +562,6 @@ type Testimonial = {
   name: string;
   role: string;
   time: string;
-  photo: string;
   text: string;
 };
 
@@ -571,7 +570,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Aline Lopes",
     role: "mãe do Pedro (7 anos)",
     time: "09:12",
-    photo: profileMom,
     text:
       "Gente, meu filho não largou! Veio rapidinho no WhatsApp e ele já passou a tarde toda colorindo o Neymar e a taça 😍⚽",
   },
@@ -579,7 +577,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Maria Regina",
     role: "avó da Sofia (8 anos)",
     time: "14:48",
-    photo: profileGrandma,
     text:
       "Comprei pra passar a tarde com a netinha. Os desenhos são lindos e tem MUITA coisa. Já imprimi várias páginas hahaha",
   },
@@ -587,7 +584,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Ricardo Silva",
     role: "pai do Gabriel (6 anos)",
     time: "20:03",
-    photo: profileDad,
     text:
       "Vale cada centavo. Entrega na hora e o bônus do pôster pra emoldurar foi o que mais ele gostou 🇧🇷",
   },
@@ -595,7 +591,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Juliana Matos",
     role: "tia do Lucas (9 anos)",
     time: "11:27",
-    photo: profileAunt,
     text:
       "Comprei pro meu sobrinho de presente. Qualidade muito boa dos desenhos e a agenda dos jogos veio junto certinho.",
   },
@@ -603,7 +598,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Paula Lima",
     role: "mãe da Helena (7 anos)",
     time: "19:21",
-    photo: profileMom,
     text:
       "Adorei porque tirou ela um pouco do tablet. As páginas das bandeiras ela tá adorando 💚💛",
   },
@@ -611,7 +605,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Sérgio Fonseca",
     role: "avô do Miguel (10 anos)",
     time: "08:34",
-    photo: profileGrandma,
     text:
       "Já estamos colorindo juntos os estádios. Variedade absurda e os 3 bônus chegaram tudo certo no WhatsApp.",
   },
@@ -619,7 +612,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Bruno Carvalho",
     role: "pai da Laura (8 anos)",
     time: "16:55",
-    photo: profileDad,
     text:
       "Chegou em minutos e a impressão ficou ótima. O Livro de Colorir surpreendeu bastante pelo preço.",
   },
@@ -627,7 +619,6 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Camila Rocha",
     role: "mãe do Davi (5 anos)",
     time: "22:10",
-    photo: profileAunt,
     text:
       "Meu filho ficou encantado com os jogadores e a capa. Vale muito a pena, principalmente com os bônus inclusos.",
   },
@@ -637,14 +628,6 @@ function WhatsappBubble({ t }: { t: Testimonial }) {
   return (
     <article className="flex flex-col rounded-2xl border border-border bg-card p-4 shadow-card-brand">
       <header className="flex items-center gap-3 border-b border-border pb-3">
-        <img
-          src={t.photo}
-          alt={`Foto de perfil de ${t.name}`}
-          loading="lazy"
-          width={1024}
-          height={1024}
-          className="h-11 w-11 flex-none rounded-full object-cover blur-[3px] saturate-75"
-        />
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-semibold text-brand-blue">{t.name}</p>
           <p className="truncate text-xs text-muted-foreground">{t.role}</p>
