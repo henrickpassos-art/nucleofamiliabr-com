@@ -13,7 +13,7 @@ import {
   ShieldCheck,
   Smartphone,
   Sparkles,
-  Star,
+  Smartphone,
   Trophy,
   Users,
   Zap,
