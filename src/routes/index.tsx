@@ -8,13 +8,9 @@ import {
   Flame,
   Gift,
   Lock,
-  Palette,
-  Printer,
   ShieldCheck,
-  Smartphone,
   Sparkles,
   Trophy,
-  Users,
   Zap,
 } from "lucide-react";
 
