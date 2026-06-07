@@ -8,13 +8,9 @@ import {
   Flame,
   Gift,
   Lock,
-  Palette,
-  Printer,
   ShieldCheck,
-  Smartphone,
   Sparkles,
   Trophy,
-  Users,
   Zap,
 } from "lucide-react";
 
@@ -333,18 +329,18 @@ function Included() {
 
           <div className="flex flex-col gap-4">
             {bonuses.map((b) => (
-              <article
+            <article
                 key={b.n}
-                className="group relative grid gap-4 rounded-2xl border border-border bg-card p-5 shadow-card-brand transition-all hover:-translate-y-0.5 sm:grid-cols-[112px_1fr]"
+                className="group relative grid gap-4 rounded-2xl border border-border bg-card p-5 shadow-card-brand transition-all hover:-translate-y-0.5 sm:grid-cols-[140px_1fr]"
               >
-                <div className="overflow-hidden rounded-2xl border border-border bg-white">
+                <div className="flex items-center justify-center overflow-hidden rounded-2xl border border-border bg-white p-2">
                   <img
                     src={b.image}
                     alt={b.alt}
                     loading="lazy"
                     width={1024}
                     height={1024}
-                    className="aspect-[4/5] h-full w-full object-cover"
+                    className="h-auto w-full object-contain"
                   />
                 </div>
                 <div>
@@ -465,12 +461,12 @@ function PreviewSection() {
 
 function BenefitsSection() {
   const cards = [
-    { icon: Palette, title: "Estimula a criatividade", desc: "Cores, traços e expressão livre em cada página." },
-    { icon: Trophy, title: "Ídolos do futebol mundial", desc: "Craques lendários e temas da Copa em ilustrações exclusivas." },
-    { icon: Printer, title: "Imprima quantas vezes quiser", desc: "Uso ilimitado para uso pessoal e familiar." },
-    { icon: Smartphone, title: "Atividades longe das telas", desc: "Tempo de qualidade sem celular ou TV." },
-    { icon: Users, title: "Momentos em família", desc: "Pinte junto com pais, avós, tios e irmãos." },
-    { icon: Sparkles, title: "Clima da Copa do Mundo", desc: "Diversão temática para crianças que amam futebol." },
+    { emoji: "🎨", title: "Estimula a criatividade", desc: "Cores, traços e expressão livre em cada página." },
+    { emoji: "🏆", title: "Ídolos do futebol mundial", desc: "Craques lendários e temas da Copa em ilustrações exclusivas." },
+    { emoji: "🖨️", title: "Imprima quantas vezes quiser", desc: "Uso ilimitado para uso pessoal e familiar." },
+    { emoji: "📵", title: "Atividades longe das telas", desc: "Tempo de qualidade sem celular ou TV." },
+    { emoji: "👨‍👩‍👧‍👦", title: "Momentos em família", desc: "Pinte junto com pais, avós, tios e irmãos." },
+    { emoji: "✨", title: "Clima da Copa do Mundo", desc: "Diversão temática para crianças que amam futebol." },
   ];
   return (
     <section className="bg-muted py-16 sm:py-24">
@@ -480,13 +476,13 @@ function BenefitsSection() {
           <h2 className="mt-2 text-3xl sm:text-5xl">Muito mais do que um Livro de Colorir</h2>
         </header>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map(({ icon: Icon, title, desc }) => (
+          {cards.map(({ emoji, title, desc }) => (
             <article
               key={title}
               className="rounded-2xl border border-border bg-card p-6 shadow-card-brand transition-all hover:-translate-y-1"
             >
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-green text-white">
-                <Icon className="h-6 w-6" />
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-green text-2xl">
+                {emoji}
               </div>
               <h3 className="mt-4 text-xl font-bold text-foreground">{title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
@@ -509,7 +505,7 @@ function OfferSection() {
         <h2 className="mt-4 text-4xl sm:text-6xl">Oferta Especial de Lançamento</h2>
 
         <div className="mt-8 inline-block rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-          <p className="text-sm font-bold uppercase tracking-widest text-brand-green-bright">COMPRE 1 LEVE 4</p>
+          <p className="inline-block rounded-full bg-brand-green-bright px-4 py-1.5 text-base font-black uppercase tracking-widest text-brand-blue-dark sm:text-lg">COMPRE 1 LEVE 4</p>
           <p className="mt-2 text-white/70 line-through">De R$ 49,90</p>
           <p className="mt-1 font-display text-5xl text-brand-gold sm:text-7xl">R$ 10,90</p>
           <p className="mt-1 text-sm text-white/70">Pagamento único · acesso vitalício</p>
