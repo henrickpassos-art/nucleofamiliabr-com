@@ -333,18 +333,18 @@ function Included() {
 
           <div className="flex flex-col gap-4">
             {bonuses.map((b) => (
-              <article
+            <article
                 key={b.n}
-                className="group relative grid gap-4 rounded-2xl border border-border bg-card p-5 shadow-card-brand transition-all hover:-translate-y-0.5 sm:grid-cols-[112px_1fr]"
+                className="group relative grid gap-4 rounded-2xl border border-border bg-card p-5 shadow-card-brand transition-all hover:-translate-y-0.5 sm:grid-cols-[140px_1fr]"
               >
-                <div className="overflow-hidden rounded-2xl border border-border bg-white">
+                <div className="flex items-center justify-center overflow-hidden rounded-2xl border border-border bg-white p-2">
                   <img
                     src={b.image}
                     alt={b.alt}
                     loading="lazy"
                     width={1024}
                     height={1024}
-                    className="aspect-[4/5] h-full w-full object-cover"
+                    className="h-auto w-full object-contain"
                   />
                 </div>
                 <div>
