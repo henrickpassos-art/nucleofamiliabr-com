@@ -465,12 +465,12 @@ function PreviewSection() {
 
 function BenefitsSection() {
   const cards = [
-    { icon: Palette, title: "Estimula a criatividade", desc: "Cores, traços e expressão livre em cada página." },
-    { icon: Trophy, title: "Ídolos do futebol mundial", desc: "Craques lendários e temas da Copa em ilustrações exclusivas." },
-    { icon: Printer, title: "Imprima quantas vezes quiser", desc: "Uso ilimitado para uso pessoal e familiar." },
-    { icon: Smartphone, title: "Atividades longe das telas", desc: "Tempo de qualidade sem celular ou TV." },
-    { icon: Users, title: "Momentos em família", desc: "Pinte junto com pais, avós, tios e irmãos." },
-    { icon: Sparkles, title: "Clima da Copa do Mundo", desc: "Diversão temática para crianças que amam futebol." },
+    { emoji: "🎨", title: "Estimula a criatividade", desc: "Cores, traços e expressão livre em cada página." },
+    { emoji: "🏆", title: "Ídolos do futebol mundial", desc: "Craques lendários e temas da Copa em ilustrações exclusivas." },
+    { emoji: "🖨️", title: "Imprima quantas vezes quiser", desc: "Uso ilimitado para uso pessoal e familiar." },
+    { emoji: "📵", title: "Atividades longe das telas", desc: "Tempo de qualidade sem celular ou TV." },
+    { emoji: "👨‍👩‍👧‍👦", title: "Momentos em família", desc: "Pinte junto com pais, avós, tios e irmãos." },
+    { emoji: "✨", title: "Clima da Copa do Mundo", desc: "Diversão temática para crianças que amam futebol." },
   ];
   return (
     <section className="bg-muted py-16 sm:py-24">
@@ -480,13 +480,13 @@ function BenefitsSection() {
           <h2 className="mt-2 text-3xl sm:text-5xl">Muito mais do que um Livro de Colorir</h2>
         </header>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map(({ icon: Icon, title, desc }) => (
+          {cards.map(({ emoji, title, desc }) => (
             <article
               key={title}
               className="rounded-2xl border border-border bg-card p-6 shadow-card-brand transition-all hover:-translate-y-1"
             >
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-green text-white">
-                <Icon className="h-6 w-6" />
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-green text-2xl">
+                {emoji}
               </div>
               <h3 className="mt-4 text-xl font-bold text-foreground">{title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
