@@ -509,7 +509,7 @@ function OfferSection() {
         <h2 className="mt-4 text-4xl sm:text-6xl">Oferta Especial de Lançamento</h2>
 
         <div className="mt-8 inline-block rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-          <p className="text-sm font-bold uppercase tracking-widest text-brand-green-bright">COMPRE 1 LEVE 4</p>
+          <p className="inline-block rounded-full bg-brand-green-bright px-4 py-1.5 text-base font-black uppercase tracking-widest text-brand-blue-dark sm:text-lg">COMPRE 1 LEVE 4</p>
           <p className="mt-2 text-white/70 line-through">De R$ 49,90</p>
           <p className="mt-1 font-display text-5xl text-brand-gold sm:text-7xl">R$ 10,90</p>
           <p className="mt-1 text-sm text-white/70">Pagamento único · acesso vitalício</p>
