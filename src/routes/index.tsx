@@ -441,8 +441,9 @@ function PreviewSection() {
                     src={item.src}
                     alt={item.alt}
                     loading="lazy"
-                    width={1024}
-                    height={1024}
+                    decoding="async"
+                    width={400}
+                    height={500}
                     className="aspect-[4/5] w-full object-cover"
                   />
                 </button>
@@ -451,19 +452,19 @@ function PreviewSection() {
 
             <ul className="mt-6 grid gap-3">
               {[
-                "Capa colorida profissional",
-                "Páginas dos craques mais amados do futebol",
-                "Taça, estádios e temas da Copa",
-                "Arquivo digital para baixar e imprimir",
-                "3 bônus exclusivos já inclusos",
+                { label: "Capa colorida profissional", emoji: "🎨" },
+                { label: "Páginas dos craques mais amados do futebol", emoji: "⚽" },
+                { label: "Taça, estádios e temas da Copa", emoji: "🏆" },
+                { label: "Arquivo digital para baixar e imprimir", emoji: "📄" },
+                { label: "3 bônus exclusivos já inclusos", emoji: "🎁" },
               ].map((b) => (
-                <BenefitRow key={b}>{b}</BenefitRow>
+                <BenefitRow key={b.label} emoji={b.emoji}>{b.label}</BenefitRow>
               ))}
             </ul>
 
             <div className="mt-8">
               <CTAButton size="xl" className="w-full sm:w-auto">
-                Quero meu livro agora
+                Quero meu livro agora · R$ 14,90
               </CTAButton>
             </div>
           </div>
