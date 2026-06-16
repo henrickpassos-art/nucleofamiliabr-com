@@ -350,10 +350,12 @@ function Included() {
                     src={b.image}
                     alt={b.alt}
                     loading="lazy"
-                    width={1024}
-                    height={1024}
+                    decoding="async"
+                    width={800}
+                    height={1000}
                     className="h-auto w-full object-contain"
                   />
+
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest text-brand-green">🎁 Bônus {b.n}</p>
