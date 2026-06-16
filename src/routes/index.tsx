@@ -56,7 +56,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Pintando a Copa do Mundo 2026 + 3 Bônus" },
       {
         property: "og:description",
-        content: "Livro digital com +100 desenhos da Copa para colorir. Acesso imediato por R$ 10,90.",
+        content: "Livro digital com +100 desenhos da Copa para colorir. Acesso imediato por R$ 14,90.",
       },
       { property: "og:type", content: "website" },
       {
@@ -521,8 +521,8 @@ function OfferSection() {
 
         <div className="mt-8 inline-block rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
           <p className="inline-block rounded-full bg-brand-green-bright px-4 py-1.5 text-base font-black uppercase tracking-widest text-brand-blue-dark sm:text-lg">COMPRE 1 LEVE 4</p>
-          <p className="mt-2 text-white/70 line-through">De R$ 49,90</p>
-          <p className="mt-1 font-display text-5xl text-brand-gold sm:text-7xl">R$ 10,90</p>
+          <p className="mt-2 text-white/70 line-through">De R$ 69,90</p>
+          <p className="mt-1 font-display text-5xl text-brand-gold sm:text-7xl">R$ 14,90</p>
           <p className="mt-1 text-sm text-white/70">Pagamento único · acesso vitalício</p>
 
           <ul className="mx-auto mt-6 max-w-sm space-y-2 text-left text-white/95">
@@ -556,7 +556,7 @@ function OfferSection() {
 
           <div className="mt-7">
             <CTAButton size="xl" className="w-full sm:w-auto">
-              Garantir agora por R$ 10,90
+              Garantir agora por R$ 14,90
             </CTAButton>
           </div>
           <p className="mt-3 text-xs text-white/70">Promoção válida enquanto o contador estiver ativo.</p>
@@ -750,8 +750,8 @@ function FinalCTA() {
         </p>
 
         <div className="mx-auto mt-8 inline-flex flex-col items-center gap-1 rounded-2xl bg-white/5 px-6 py-4 backdrop-blur">
-          <p className="text-sm text-white/70 line-through">DE R$ 49,90</p>
-          <p className="font-display text-5xl text-brand-gold sm:text-6xl">POR R$ 10,90</p>
+          <p className="text-sm text-white/70 line-through">DE R$ 69,90</p>
+          <p className="font-display text-5xl text-brand-gold sm:text-6xl">POR R$ 14,90</p>
         </div>
 
         <div className="mt-8">
