@@ -393,7 +393,9 @@ function PreviewSection() {
                 src={activeItem.src}
                 alt={activeItem.alt}
                 width={1024}
-                height={1024}
+                height={1280}
+                loading="lazy"
+                decoding="async"
                 className="mx-auto aspect-[4/5] w-full object-contain bg-white"
               />
             </div>
