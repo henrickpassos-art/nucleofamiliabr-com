@@ -25,7 +25,8 @@ import cr7Asset from "@/assets/cr7.png.asset.json";
 import viniAsset from "@/assets/vini_jr.png.asset.json";
 import tacaAsset from "@/assets/TACA.png.asset.json";
 import brAsset from "@/assets/BR.jpg.asset.json";
-import c5 from "@/assets/coloring-5.png";
+import stadiumAsset from "@/assets/ATT_STADIUM.png.asset.json";
+import busAsset from "@/assets/ONIBUS_BRASIL.png.asset.json";
 import stadiumBg from "@/assets/stadium-bg.jpg";
 
 const CHECKOUT_URL = "https://pay.cakto.com.br/8wbiopb_912361";
@@ -38,7 +39,8 @@ const PREVIEW_ITEMS = [
   { src: cr7Asset.url, alt: "Página do Livro de Colorir do Cristiano Ronaldo" },
   { src: messiAsset.url, alt: "Página do Livro de Colorir do Messi" },
   { src: mbappeAsset.url, alt: "Página do Livro de Colorir do Mbappé" },
-  { src: c5, alt: "Página do Livro de Colorir com estádio famoso" },
+  { src: stadiumAsset.url, alt: "Página do Livro de Colorir com estádio AT&T" },
+  { src: busAsset.url, alt: "Página do Livro de Colorir com ônibus da seleção brasileira" },
   { src: tacaAsset.url, alt: "Página do Livro de Colorir com a taça da Copa" },
 ] as const;
 
