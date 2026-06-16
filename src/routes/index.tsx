@@ -755,7 +755,7 @@ function FinalCTA() {
         </div>
 
         <div className="mt-8">
-          <CTAButton size="xl">Quero baixar meu livro e os bônus</CTAButton>
+          <CTAButton size="xl">Quero baixar meu livro e os bônus · R$ 14,90</CTAButton>
         </div>
         <div className="mt-6">
           <CountdownBlock />
