@@ -25,7 +25,8 @@ import cr7Asset from "@/assets/cr7.png.asset.json";
 import viniAsset from "@/assets/vini_jr.png.asset.json";
 import tacaAsset from "@/assets/TACA.png.asset.json";
 import brAsset from "@/assets/BR.jpg.asset.json";
-import c5 from "@/assets/coloring-5.png";
+import stadiumAsset from "@/assets/ATT_STADIUM.png.asset.json";
+import busAsset from "@/assets/ONIBUS_BRASIL.png.asset.json";
 import stadiumBg from "@/assets/stadium-bg.jpg";
 
 const CHECKOUT_URL = "https://pay.cakto.com.br/8wbiopb_912361";
@@ -38,7 +39,8 @@ const PREVIEW_ITEMS = [
   { src: cr7Asset.url, alt: "Página do Livro de Colorir do Cristiano Ronaldo" },
   { src: messiAsset.url, alt: "Página do Livro de Colorir do Messi" },
   { src: mbappeAsset.url, alt: "Página do Livro de Colorir do Mbappé" },
-  { src: c5, alt: "Página do Livro de Colorir com estádio famoso" },
+  { src: stadiumAsset.url, alt: "Página do Livro de Colorir com estádio AT&T" },
+  { src: busAsset.url, alt: "Página do Livro de Colorir com ônibus da seleção brasileira" },
   { src: tacaAsset.url, alt: "Página do Livro de Colorir com a taça da Copa" },
 ] as const;
 
@@ -54,7 +56,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Pintando a Copa do Mundo 2026 + 3 Bônus" },
       {
         property: "og:description",
-        content: "Livro digital com +100 desenhos da Copa para colorir. Acesso imediato por R$ 10,90.",
+        content: "Livro digital com +100 desenhos da Copa para colorir. Acesso imediato por R$ 14,90.",
       },
       { property: "og:type", content: "website" },
       {
@@ -157,11 +159,11 @@ function CTAButton({
   );
 }
 
-function BenefitRow({ children }: { children: React.ReactNode }) {
+function BenefitRow({ children, emoji = "✅" }: { children: React.ReactNode; emoji?: string }) {
   return (
     <li className="flex items-start gap-2 text-base">
-      <span className="mt-0.5 grid h-6 w-6 flex-none place-items-center rounded-full bg-brand-green text-white">
-        <Check className="h-4 w-4" strokeWidth={3} />
+      <span className="mt-0.5 grid h-6 w-6 flex-none place-items-center text-lg" aria-hidden>
+        {emoji}
       </span>
       <span>{children}</span>
     </li>
@@ -204,59 +206,69 @@ function LandingPage() {
 }
 
 function Hero() {
+  const bg = useMemo(() => ({ backgroundImage: `url(${stadiumBg})` }), []);
+  const features = [
+    { emoji: "⚡", label: "Acesso imediato" },
+    { emoji: "📄", label: "Arquivo digital em PDF" },
+    { emoji: "🎨", label: "Mais de 100 ilustrações" },
+    { emoji: "🖨️", label: "Imprima quantas vezes quiser" },
+  ];
   return (
-    <section className="relative overflow-hidden bg-gradient-hero text-white">
-      <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_20%_10%,oklch(0.68_0.2_145/0.4),transparent_50%),radial-gradient(circle_at_80%_70%,oklch(0.84_0.16_88/0.3),transparent_55%)]" />
+    <section className="relative isolate overflow-hidden bg-gradient-hero text-white">
+      <div className="absolute inset-0 bg-cover bg-center opacity-25" style={bg} aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-blue-dark/85 via-brand-blue/75 to-brand-blue-dark/95" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:radial-gradient(circle_at_20%_10%,oklch(0.68_0.2_145/0.45),transparent_50%),radial-gradient(circle_at_80%_70%,oklch(0.84_0.16_88/0.4),transparent_55%)]" />
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 md:grid-cols-2 md:py-20">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-gold">
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-gold backdrop-blur">
             <Sparkles className="h-3.5 w-3.5" /> Lançamento Copa 2026
           </span>
-          <h1 className="mt-4 font-display text-4xl leading-[1] sm:text-6xl md:text-7xl">
+          <h1 className="mt-4 font-display text-4xl leading-[1] drop-shadow-lg sm:text-6xl md:text-7xl">
             PINTANDO A <span className="text-brand-gold">COPA DO MUNDO</span> 2026
-            <span className="block text-2xl text-white/90 sm:text-3xl md:text-4xl">+ 3 BÔNUS</span>
+            <span className="block text-2xl text-white/95 sm:text-3xl md:text-4xl">+ 3 BÔNUS</span>
           </h1>
-          <p className="mt-5 max-w-xl text-base text-white/85 sm:text-lg">
+          <p className="mt-5 max-w-xl text-base text-white/90 sm:text-lg">
             Diversão garantida para crianças apaixonadas por futebol. Mais de 100 ilustrações para imprimir,
             colorir e aproveitar momentos longe das telas.
           </p>
 
           <ul className="mt-6 grid gap-2 text-white/95 sm:grid-cols-2">
-            {[
-              "Acesso imediato",
-              "Arquivo digital em PDF",
-              "Mais de 100 ilustrações",
-              "Imprima quantas vezes quiser",
-            ].map((b) => (
-              <li key={b} className="flex items-start gap-2">
-                <Check className="mt-1 h-4 w-4 flex-none text-brand-green-bright" strokeWidth={3} />
-                <span>{b}</span>
+            {features.map((f) => (
+              <li key={f.label} className="flex items-start gap-2">
+                <span className="mt-0.5 text-lg leading-none" aria-hidden>{f.emoji}</span>
+                <span>{f.label}</span>
               </li>
             ))}
-            <li className="flex items-start gap-2 sm:col-span-2">
-              <Check className="mt-1 h-4 w-4 flex-none text-brand-green-bright" strokeWidth={3} />
-              <span className="inline-flex items-center gap-2">
-                Receba rapidamente pelo <WhatsAppLogo className="h-4 w-4 text-brand-green-bright" /> WhatsApp
-              </span>
+            <li className="sm:col-span-2">
+              <div className="mt-1 inline-flex items-center gap-3 rounded-2xl border border-brand-green-bright/40 bg-brand-green/15 px-4 py-3 backdrop-blur">
+                <WhatsAppLogo className="h-9 w-9 flex-none text-brand-green-bright drop-shadow" />
+                <div className="text-left leading-tight">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-brand-green-bright">Entrega via WhatsApp</p>
+                  <p className="text-base font-semibold text-white">Você recebe na hora, direto no seu Zap</p>
+                </div>
+              </div>
             </li>
           </ul>
 
           <div className="mt-7">
-            <CTAButton size="xl">Quero meu livro agora</CTAButton>
-            <p className="mt-3 flex items-center gap-2 text-sm text-white/70">
+            <CTAButton size="xl">Quero meu livro agora · R$ 14,90</CTAButton>
+            <p className="mt-3 flex items-center gap-2 text-sm text-white/80">
               <ShieldCheck className="h-4 w-4 text-brand-green-bright" /> Compra 100% segura · Entrega imediata
             </p>
           </div>
         </div>
 
         <div className="relative mx-auto w-full max-w-md">
-          <div className="absolute -inset-6 rounded-full bg-brand-gold/20 blur-3xl" />
+          <div className="absolute -inset-6 rounded-full bg-brand-gold/25 blur-3xl" />
           <div className="relative animate-float">
             <img
               src={heroCover.url}
               alt="Capa do Livro de Colorir Pintando a Copa do Mundo 2026"
               width={1024}
               height={1024}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="mx-auto w-full max-w-sm rounded-[2rem] border border-white/10 drop-shadow-2xl"
             />
           </div>
@@ -267,14 +279,14 @@ function Hero() {
 }
 
 function Included() {
-  const items = [
-    "Jogadores famosos",
-    "Bandeiras das seleções",
-    "Taça da Copa",
-    "Estádios",
-    "Bolas de futebol",
-    "Chuteiras",
-    "Momentos marcantes do futebol",
+  const items: Array<{ label: string; emoji: string }> = [
+    { label: "Jogadores famosos", emoji: "⚽" },
+    { label: "Bandeiras das seleções", emoji: "🚩" },
+    { label: "Taça da Copa", emoji: "🏆" },
+    { label: "Estádios", emoji: "🏟️" },
+    { label: "Bolas de futebol", emoji: "⚽" },
+    { label: "Chuteiras", emoji: "👟" },
+    { label: "Momentos marcantes do futebol", emoji: "✨" },
   ];
 
   const bonuses = [
@@ -319,9 +331,9 @@ function Included() {
             <p className="mt-2 text-white/80">Contendo:</p>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {items.map((i) => (
-                <li key={i} className="flex items-start gap-2 text-white/95">
-                  <Check className="mt-1 h-4 w-4 flex-none text-brand-green-bright" strokeWidth={3} />
-                  {i}
+                <li key={i.label} className="flex items-start gap-2 text-white/95">
+                  <span className="mt-0.5 text-lg leading-none" aria-hidden>{i.emoji}</span>
+                  {i.label}
                 </li>
               ))}
             </ul>
@@ -338,10 +350,12 @@ function Included() {
                     src={b.image}
                     alt={b.alt}
                     loading="lazy"
-                    width={1024}
-                    height={1024}
+                    decoding="async"
+                    width={800}
+                    height={1000}
                     className="h-auto w-full object-contain"
                   />
+
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest text-brand-green">🎁 Bônus {b.n}</p>
@@ -379,7 +393,9 @@ function PreviewSection() {
                 src={activeItem.src}
                 alt={activeItem.alt}
                 width={1024}
-                height={1024}
+                height={1280}
+                loading="lazy"
+                decoding="async"
                 className="mx-auto aspect-[4/5] w-full object-contain bg-white"
               />
             </div>
@@ -427,8 +443,9 @@ function PreviewSection() {
                     src={item.src}
                     alt={item.alt}
                     loading="lazy"
-                    width={1024}
-                    height={1024}
+                    decoding="async"
+                    width={400}
+                    height={500}
                     className="aspect-[4/5] w-full object-cover"
                   />
                 </button>
@@ -437,19 +454,19 @@ function PreviewSection() {
 
             <ul className="mt-6 grid gap-3">
               {[
-                "Capa colorida profissional",
-                "Páginas dos craques mais amados do futebol",
-                "Taça, estádios e temas da Copa",
-                "Arquivo digital para baixar e imprimir",
-                "3 bônus exclusivos já inclusos",
+                { label: "Capa colorida profissional", emoji: "🎨" },
+                { label: "Páginas dos craques mais amados do futebol", emoji: "⚽" },
+                { label: "Taça, estádios e temas da Copa", emoji: "🏆" },
+                { label: "Arquivo digital para baixar e imprimir", emoji: "📄" },
+                { label: "3 bônus exclusivos já inclusos", emoji: "🎁" },
               ].map((b) => (
-                <BenefitRow key={b}>{b}</BenefitRow>
+                <BenefitRow key={b.label} emoji={b.emoji}>{b.label}</BenefitRow>
               ))}
             </ul>
 
             <div className="mt-8">
               <CTAButton size="xl" className="w-full sm:w-auto">
-                Quero meu livro agora
+                Quero meu livro agora · R$ 14,90
               </CTAButton>
             </div>
           </div>
@@ -506,8 +523,8 @@ function OfferSection() {
 
         <div className="mt-8 inline-block rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
           <p className="inline-block rounded-full bg-brand-green-bright px-4 py-1.5 text-base font-black uppercase tracking-widest text-brand-blue-dark sm:text-lg">COMPRE 1 LEVE 4</p>
-          <p className="mt-2 text-white/70 line-through">De R$ 49,90</p>
-          <p className="mt-1 font-display text-5xl text-brand-gold sm:text-7xl">R$ 10,90</p>
+          <p className="mt-2 text-white/70 line-through">De R$ 69,90</p>
+          <p className="mt-1 font-display text-5xl text-brand-gold sm:text-7xl">R$ 14,90</p>
           <p className="mt-1 text-sm text-white/70">Pagamento único · acesso vitalício</p>
 
           <ul className="mx-auto mt-6 max-w-sm space-y-2 text-left text-white/95">
@@ -541,7 +558,7 @@ function OfferSection() {
 
           <div className="mt-7">
             <CTAButton size="xl" className="w-full sm:w-auto">
-              Garantir agora por R$ 10,90
+              Garantir agora por R$ 14,90
             </CTAButton>
           </div>
           <p className="mt-3 text-xs text-white/70">Promoção válida enquanto o contador estiver ativo.</p>
@@ -735,12 +752,12 @@ function FinalCTA() {
         </p>
 
         <div className="mx-auto mt-8 inline-flex flex-col items-center gap-1 rounded-2xl bg-white/5 px-6 py-4 backdrop-blur">
-          <p className="text-sm text-white/70 line-through">DE R$ 49,90</p>
-          <p className="font-display text-5xl text-brand-gold sm:text-6xl">POR R$ 10,90</p>
+          <p className="text-sm text-white/70 line-through">DE R$ 69,90</p>
+          <p className="font-display text-5xl text-brand-gold sm:text-6xl">POR R$ 14,90</p>
         </div>
 
         <div className="mt-8">
-          <CTAButton size="xl">Quero baixar meu livro e os bônus</CTAButton>
+          <CTAButton size="xl">Quero baixar meu livro e os bônus · R$ 14,90</CTAButton>
         </div>
         <div className="mt-6">
           <CountdownBlock />
