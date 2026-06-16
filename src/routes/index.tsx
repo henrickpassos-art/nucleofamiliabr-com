@@ -279,14 +279,14 @@ function Hero() {
 }
 
 function Included() {
-  const items = [
-    "Jogadores famosos",
-    "Bandeiras das seleções",
-    "Taça da Copa",
-    "Estádios",
-    "Bolas de futebol",
-    "Chuteiras",
-    "Momentos marcantes do futebol",
+  const items: Array<{ label: string; emoji: string }> = [
+    { label: "Jogadores famosos", emoji: "⚽" },
+    { label: "Bandeiras das seleções", emoji: "🚩" },
+    { label: "Taça da Copa", emoji: "🏆" },
+    { label: "Estádios", emoji: "🏟️" },
+    { label: "Bolas de futebol", emoji: "⚽" },
+    { label: "Chuteiras", emoji: "👟" },
+    { label: "Momentos marcantes do futebol", emoji: "✨" },
   ];
 
   const bonuses = [
