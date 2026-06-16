@@ -206,59 +206,69 @@ function LandingPage() {
 }
 
 function Hero() {
+  const bg = useMemo(() => ({ backgroundImage: `url(${stadiumBg})` }), []);
+  const features = [
+    { emoji: "⚡", label: "Acesso imediato" },
+    { emoji: "📄", label: "Arquivo digital em PDF" },
+    { emoji: "🎨", label: "Mais de 100 ilustrações" },
+    { emoji: "🖨️", label: "Imprima quantas vezes quiser" },
+  ];
   return (
-    <section className="relative overflow-hidden bg-gradient-hero text-white">
-      <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_20%_10%,oklch(0.68_0.2_145/0.4),transparent_50%),radial-gradient(circle_at_80%_70%,oklch(0.84_0.16_88/0.3),transparent_55%)]" />
+    <section className="relative isolate overflow-hidden bg-gradient-hero text-white">
+      <div className="absolute inset-0 bg-cover bg-center opacity-25" style={bg} aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-blue-dark/85 via-brand-blue/75 to-brand-blue-dark/95" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:radial-gradient(circle_at_20%_10%,oklch(0.68_0.2_145/0.45),transparent_50%),radial-gradient(circle_at_80%_70%,oklch(0.84_0.16_88/0.4),transparent_55%)]" />
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 md:grid-cols-2 md:py-20">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-gold">
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-gold backdrop-blur">
             <Sparkles className="h-3.5 w-3.5" /> Lançamento Copa 2026
           </span>
-          <h1 className="mt-4 font-display text-4xl leading-[1] sm:text-6xl md:text-7xl">
+          <h1 className="mt-4 font-display text-4xl leading-[1] drop-shadow-lg sm:text-6xl md:text-7xl">
             PINTANDO A <span className="text-brand-gold">COPA DO MUNDO</span> 2026
-            <span className="block text-2xl text-white/90 sm:text-3xl md:text-4xl">+ 3 BÔNUS</span>
+            <span className="block text-2xl text-white/95 sm:text-3xl md:text-4xl">+ 3 BÔNUS</span>
           </h1>
-          <p className="mt-5 max-w-xl text-base text-white/85 sm:text-lg">
+          <p className="mt-5 max-w-xl text-base text-white/90 sm:text-lg">
             Diversão garantida para crianças apaixonadas por futebol. Mais de 100 ilustrações para imprimir,
             colorir e aproveitar momentos longe das telas.
           </p>
 
           <ul className="mt-6 grid gap-2 text-white/95 sm:grid-cols-2">
-            {[
-              "Acesso imediato",
-              "Arquivo digital em PDF",
-              "Mais de 100 ilustrações",
-              "Imprima quantas vezes quiser",
-            ].map((b) => (
-              <li key={b} className="flex items-start gap-2">
-                <Check className="mt-1 h-4 w-4 flex-none text-brand-green-bright" strokeWidth={3} />
-                <span>{b}</span>
+            {features.map((f) => (
+              <li key={f.label} className="flex items-start gap-2">
+                <span className="mt-0.5 text-lg leading-none" aria-hidden>{f.emoji}</span>
+                <span>{f.label}</span>
               </li>
             ))}
-            <li className="flex items-start gap-2 sm:col-span-2">
-              <Check className="mt-1 h-4 w-4 flex-none text-brand-green-bright" strokeWidth={3} />
-              <span className="inline-flex items-center gap-2">
-                Receba rapidamente pelo <WhatsAppLogo className="h-4 w-4 text-brand-green-bright" /> WhatsApp
-              </span>
+            <li className="sm:col-span-2">
+              <div className="mt-1 inline-flex items-center gap-3 rounded-2xl border border-brand-green-bright/40 bg-brand-green/15 px-4 py-3 backdrop-blur">
+                <WhatsAppLogo className="h-9 w-9 flex-none text-brand-green-bright drop-shadow" />
+                <div className="text-left leading-tight">
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-brand-green-bright">Entrega via WhatsApp</p>
+                  <p className="text-base font-semibold text-white">Você recebe na hora, direto no seu Zap</p>
+                </div>
+              </div>
             </li>
           </ul>
 
           <div className="mt-7">
-            <CTAButton size="xl">Quero meu livro agora</CTAButton>
-            <p className="mt-3 flex items-center gap-2 text-sm text-white/70">
+            <CTAButton size="xl">Quero meu livro agora · R$ 14,90</CTAButton>
+            <p className="mt-3 flex items-center gap-2 text-sm text-white/80">
               <ShieldCheck className="h-4 w-4 text-brand-green-bright" /> Compra 100% segura · Entrega imediata
             </p>
           </div>
         </div>
 
         <div className="relative mx-auto w-full max-w-md">
-          <div className="absolute -inset-6 rounded-full bg-brand-gold/20 blur-3xl" />
+          <div className="absolute -inset-6 rounded-full bg-brand-gold/25 blur-3xl" />
           <div className="relative animate-float">
             <img
               src={heroCover.url}
               alt="Capa do Livro de Colorir Pintando a Copa do Mundo 2026"
               width={1024}
               height={1024}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="mx-auto w-full max-w-sm rounded-[2rem] border border-white/10 drop-shadow-2xl"
             />
           </div>
