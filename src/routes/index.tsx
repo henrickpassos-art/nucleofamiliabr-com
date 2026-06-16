@@ -331,9 +331,9 @@ function Included() {
             <p className="mt-2 text-white/80">Contendo:</p>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {items.map((i) => (
-                <li key={i} className="flex items-start gap-2 text-white/95">
-                  <Check className="mt-1 h-4 w-4 flex-none text-brand-green-bright" strokeWidth={3} />
-                  {i}
+                <li key={i.label} className="flex items-start gap-2 text-white/95">
+                  <span className="mt-0.5 text-lg leading-none" aria-hidden>{i.emoji}</span>
+                  {i.label}
                 </li>
               ))}
             </ul>
