@@ -159,11 +159,11 @@ function CTAButton({
   );
 }
 
-function BenefitRow({ children }: { children: React.ReactNode }) {
+function BenefitRow({ children, emoji = "✅" }: { children: React.ReactNode; emoji?: string }) {
   return (
     <li className="flex items-start gap-2 text-base">
-      <span className="mt-0.5 grid h-6 w-6 flex-none place-items-center rounded-full bg-brand-green text-white">
-        <Check className="h-4 w-4" strokeWidth={3} />
+      <span className="mt-0.5 grid h-6 w-6 flex-none place-items-center text-lg" aria-hidden>
+        {emoji}
       </span>
       <span>{children}</span>
     </li>
