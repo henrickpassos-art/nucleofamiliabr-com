@@ -758,10 +758,21 @@ function FinalCTA() {
         </div>
 
         <div className="mt-8">
-          <CTAButton size="xl">Quero baixar meu livro e os bônus · R$ 14,90</CTAButton>
+          <CTAButton size="xl">Quero baixar meu livro e os bônus</CTAButton>
         </div>
         <div className="mt-6">
           <CountdownBlock />
+        </div>
+        <div className="mt-8 flex justify-center">
+          <img
+            src={selosAsset.url}
+            alt="Selos de garantia e qualidade"
+            width={1024}
+            height={576}
+            loading="lazy"
+            decoding="async"
+            className="w-full max-w-md h-auto rounded-xl"
+          />
         </div>
       </div>
     </section>
