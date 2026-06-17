@@ -27,7 +27,7 @@ import tacaAsset from "@/assets/TACA.png.asset.json";
 import brAsset from "@/assets/BR.jpg.asset.json";
 import stadiumAsset from "@/assets/ATT_STADIUM.png.asset.json";
 import busAsset from "@/assets/ONIBUS_BRASIL.png.asset.json";
-import selosAsset from "@/assets/seloss.jpg.asset.json";
+import selosAsset from "@/assets/selos-garantia.png.asset.json";
 import stadiumBg from "@/assets/stadium-bg.jpg";
 
 const CHECKOUT_URL = "https://pay.cakto.com.br/8wbiopb_912361";
@@ -779,10 +779,10 @@ function FinalCTA() {
             src={selosAsset.url}
             alt="Selos de garantia e qualidade"
             width={1024}
-            height={576}
+            height={341}
             loading="lazy"
             decoding="async"
-            className="w-full max-w-md h-auto rounded-xl"
+            className="w-full max-w-2xl h-auto rounded-xl"
           />
         </div>
       </div>
