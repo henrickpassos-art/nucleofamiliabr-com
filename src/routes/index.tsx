@@ -27,6 +27,7 @@ import tacaAsset from "@/assets/TACA.png.asset.json";
 import brAsset from "@/assets/BR.jpg.asset.json";
 import stadiumAsset from "@/assets/ATT_STADIUM.png.asset.json";
 import busAsset from "@/assets/ONIBUS_BRASIL.png.asset.json";
+import selosAsset from "@/assets/seloss.jpg.asset.json";
 import stadiumBg from "@/assets/stadium-bg.jpg";
 
 const CHECKOUT_URL = "https://pay.cakto.com.br/8wbiopb_912361";
@@ -70,8 +71,19 @@ export const Route = createFileRoute("/")({
         href: "https://fonts.googleapis.com",
       },
       {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap",
+      },
+      {
+        rel: "preload",
+        as: "image",
+        href: heroCover.url,
+        fetchpriority: "high",
       },
     ],
   }),
@@ -757,10 +769,21 @@ function FinalCTA() {
         </div>
 
         <div className="mt-8">
-          <CTAButton size="xl">Quero baixar meu livro e os bônus · R$ 14,90</CTAButton>
+          <CTAButton size="xl">Quero baixar meu livro e os bônus</CTAButton>
         </div>
         <div className="mt-6">
           <CountdownBlock />
+        </div>
+        <div className="mt-8 flex justify-center">
+          <img
+            src={selosAsset.url}
+            alt="Selos de garantia e qualidade"
+            width={1024}
+            height={576}
+            loading="lazy"
+            decoding="async"
+            className="w-full max-w-md h-auto rounded-xl"
+          />
         </div>
       </div>
     </section>
