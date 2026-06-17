@@ -27,6 +27,7 @@ import tacaAsset from "@/assets/TACA.png.asset.json";
 import brAsset from "@/assets/BR.jpg.asset.json";
 import stadiumAsset from "@/assets/ATT_STADIUM.png.asset.json";
 import busAsset from "@/assets/ONIBUS_BRASIL.png.asset.json";
+import selosAsset from "@/assets/seloss.jpg.asset.json";
 import stadiumBg from "@/assets/stadium-bg.jpg";
 
 const CHECKOUT_URL = "https://pay.cakto.com.br/8wbiopb_912361";
